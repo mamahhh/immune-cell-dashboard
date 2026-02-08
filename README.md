@@ -12,7 +12,7 @@ This project consists of two main components:
 ## Repository structure
 
 ```
-bob_loblaw_analysis/
+immune-cell-dashboard/
 ├── data_management.py  # create SQLite database and load CSV
 ├── analysis.py         # compute summary statistics and run tests
 ├── app.py              # Streamlit dashboard
@@ -78,7 +78,7 @@ extensible (new populations simply add rows), reduces redundancy
 (`samples` stores metadata once per sample), and simplifies
 analytics.
 
-## Running the analysis
+## Run
 
 1. Install the dependencies (preferably in a virtual environment):
 
@@ -94,7 +94,7 @@ analytics.
    python data_management.py ./cell-count.csv immune_data.db
    ```
 
-   This creates `immune_data.db` in the `bob_loblaw_analysis` directory
+   This creates `immune_data.db` in the `immune-cell-dashboard` directory
    containing the normalised tables and all 10 500 samples.
 
 3. To run the command‑line analysis scripts directly (optional):
@@ -122,6 +122,13 @@ analytics.
    - **Baseline Summary:** Display counts of baseline melanoma PBMC
      samples (time = 0) per project, responder status and sex.  It also
      reports the mean number of B cells for male responders at baseline.
+
+5. You can also create a GitHub Codespace to run:
+    ```bash
+   pip install -r immune-cell-dashboard/requirements.txt
+   python immune-cell-dashboard/data_management.py ./cell-count.csv immune_data.db
+   streamlit run immune-cell-dashboard/app.py --server.address 0.0.0.0 --server.port 8501
+   ```
 
 ## Code structure rationale
 
