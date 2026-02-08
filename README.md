@@ -123,11 +123,11 @@ analytics.
      samples (time = 0) per project, responder status and sex.  It also
      reports the mean number of B cells for male responders at baseline.
 
-5. You can also create a GitHub Codespace to run:
+5. If you run code at a GitHub Codespace, you can run as following:
     ```bash
-   pip install -r immune-cell-dashboard/requirements.txt
-   python immune-cell-dashboard/data_management.py ./cell-count.csv immune_data.db
-   streamlit run immune-cell-dashboard/app.py --server.address 0.0.0.0 --server.port 8501
+   python -m pip install -r requirements.txt
+   python data_management.py ./cell-count.csv immune_data.db
+   python -m streamlit run app.py
    ```
 
 ## Code structure rationale
